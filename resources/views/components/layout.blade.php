@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class="h-full bg-gray-100">
 
@@ -16,7 +17,8 @@
         <x-navbar></x-navbar>
 
 
-        <x-header> {{ $dashboard ?? '' }} </x-header>
+        <x-header> {{ $dashboard ?? 'ini kentang' }} </x-header>
+
 
         <main>
             <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">

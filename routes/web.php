@@ -3,11 +3,11 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('home', ['title' => 'Homepage', 'dashboard' => 'Home Page']);
+    return view('home', ['title' => 'Home', 'dashboard' => 'Home Page']);
 })->name('home');
 
 Route::get('/about', function () {
-    return view('about', ['title' => 'About Page', 'dashboard' => 'About Page']);
+    return view('about', ['title' => 'About Page', 'dashboard' => 'About Website']);
 })->name('about');
 
 Route::get('/contact', function () {
@@ -15,5 +15,5 @@ Route::get('/contact', function () {
 })->name('contact');
 
 Route::get('/blog', function () {
-    return view('blog', ['title' => '']);
+    return view('blog', ['title' => 'BLOG Page', 'dashboard' => 'Blog Perusahaan']);
 })->name('blog');

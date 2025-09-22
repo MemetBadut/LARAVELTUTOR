@@ -1,5 +1,6 @@
-<x-layout :ttlte="$title" :dashboard="$dashboard">
+<x-layout :title="$title">
 
-    <h3 class="text-xl fw-bold">INi adalah Homepage</h3>
+    <x-slot:dashboard> {{ $dashboard }} </x-slot:dashboard>
+    <p>Disini senang disana senang dimana-mana hatiku mengenang</p>
 
 </x-layout>
