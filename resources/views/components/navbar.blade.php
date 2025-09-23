@@ -21,9 +21,6 @@
                             <x-navlink route="posts">
                                 Blog
                             </x-navlink>
-
-
-
                         </div>
                     </div>
                 </div>
@@ -88,12 +85,19 @@
         <el-disclosure id="mobile-menu" hidden class="block md:hidden">
             <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
                 <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-                <a href="#" aria-current="page"
-                    class="block rounded-md bg-gray-950/50 px-3 py-2 text-base font-medium text-white">Home</a>
-                <a href="#"
-                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">About</a>
-                <a href="#"
-                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Contact</a>
+                <x-mobilelink route="home">
+                    Home
+                </x-mobilelink>
+                <x-mobilelink route="contact">
+                    Contact
+                </x-mobilelink>
+                <x-mobilelink route="about">
+                    About
+                </x-mobilelink>
+                <x-mobilelink route="posts">
+                    Blog
+                </x-mobilelink>
+
             </div>
             <div class="border-t border-white/10 pt-4 pb-3">
                 <div class="flex items-center px-5">

@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -29,6 +30,7 @@ Route::get('/posts', function () {
         'dashboard' => 'Blog Perusahaan',
         'posts' => [
             [
+                'id' => '1',
                 'judul' => 'Artikel 1',
                 'author' => 'Bapak Mulprobo',
                 'body' => '  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt libero obcaecati iusto veniam
@@ -36,6 +38,7 @@ Route::get('/posts', function () {
                 sint voluptatibus quia!'
             ],
             [
+                'id' => '2',
                 'judul' => 'Artikel 2',
                 'author' => 'Bapak Yonobowo',
                 'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore delectus incidunt rem repudiandae ducimus!
@@ -45,3 +48,31 @@ Route::get('/posts', function () {
         ]
     ]);
 })->name('posts');
+
+
+Route::get('/posts/{id}', function ($id) {
+   $post = [
+        [
+            'id' => '1',
+            'judul' => 'Artikel 1',
+            'author' => 'Bapak Mulprobo',
+            'body' => '  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt libero obcaecati iusto veniam
+                accusantium tempora officia deserunt animi veritatis repudiandae atque fugiat dolore, aspernatur nam debitis
+                sint voluptatibus quia!'
+        ],
+        [
+            'id' => '2',
+            'judul' => 'Artikel 2',
+            'author' => 'Bapak Yonobowo',
+            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore delectus incidunt rem repudiandae ducimus!
+                Placeat nemo iusto, libero magnam necessitatibus sequi dolorum atque hic. Nemo accusamus sapiente non
+                delectus tenetur?'
+        ],
+    ];
+
+    $post = Arr::first($post, function($post) use ($id){
+        return $post['id'] == $id;
+    });
+
+    return view('post', ['title' => 'post page', 'dashboard' => 'Single Post', 'post' => $post]);
+})->name('posts.detail');
