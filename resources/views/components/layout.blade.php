@@ -1,3 +1,4 @@
+@props(['title' => 'Page Default'])
 
 <!DOCTYPE html>
 <html lang="en" class="h-full bg-gray-100">
@@ -8,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
-    <title> {{ $title ?? 'Page Default' }} </title>
+    <title> {{ $title }} </title>
 </head>
 
 <body class="h-full">

@@ -3,17 +3,45 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('home', ['title' => 'Home', 'dashboard' => 'Home Page']);
+    return view('home', [
+        'title' => 'Home',
+        'dashboard' => 'Home Page'
+    ]);
 })->name('home');
 
 Route::get('/about', function () {
-    return view('about', ['title' => 'About Page', 'dashboard' => 'About Website']);
+    return view('about', [
+        'title' => 'About Page',
+        'dashboard' => 'About Website'
+    ]);
 })->name('about');
 
 Route::get('/contact', function () {
-    return view('contact', ['title' => 'Contact US', 'dashboard' => 'Customer Service']);
+    return view('contact', [
+        'title' => 'Contact US',
+        'dashboard' => 'Customer Service'
+    ]);
 })->name('contact');
 
-Route::get('/blog', function () {
-    return view('blog', ['title' => 'BLOG Page', 'dashboard' => 'Blog Perusahaan']);
-})->name('blog');
+Route::get('/posts', function () {
+    return view('posts', [
+        'title' => 'post Page',
+        'dashboard' => 'Blog Perusahaan',
+        'posts' => [
+            [
+                'judul' => 'Artikel 1',
+                'author' => 'Bapak Mulprobo',
+                'body' => '  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt libero obcaecati iusto veniam
+                accusantium tempora officia deserunt animi veritatis repudiandae atque fugiat dolore, aspernatur nam debitis
+                sint voluptatibus quia!'
+            ],
+            [
+                'judul' => 'Artikel 2',
+                'author' => 'Bapak Yonobowo',
+                'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore delectus incidunt rem repudiandae ducimus!
+                Placeat nemo iusto, libero magnam necessitatibus sequi dolorum atque hic. Nemo accusamus sapiente non
+                delectus tenetur?'
+            ],
+        ]
+    ]);
+})->name('posts');

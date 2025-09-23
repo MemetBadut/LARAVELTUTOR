@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>About Company</title>
-</head>
-<body>
-    <h1>Ini Halaman About</h1>
-    <a href="/">Back Home</a>
-</body>
-</html>
+<x-layout :title="$title">
+
+    <x-slot:dashboard> {{ $dashboard }} </x-slot:dashboard>
+    <p>Disini About Page. Menjelaskan seluruh isi apacooba</p>
+
+</x-layout>
