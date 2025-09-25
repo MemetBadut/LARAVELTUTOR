@@ -28,7 +28,7 @@ Route::get('/contact', function () {
 Route::get('/posts', function () {
     return view('posts', [
         'title' => 'post Page',
-        'dashboard' => 'Blog Perusahaan',
+        'dashboard' => 'Kumpulan Blog',
         'posts' => Post::all()
     ]);
 })->name('posts');

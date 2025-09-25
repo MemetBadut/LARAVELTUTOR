@@ -8,7 +8,7 @@
                 <h2 class="mb-3 text-3xl font-bold text-gray"> {{ $post['judul'] }} </h2>
             </a>
             <div class="text-base text-gray-300">
-                <a href="#"> {{ $post['author'] }} </a> | {{ $post->created_at }}
+                <a href="#"> {{ $post['author'] }} </a> | {{ $post->created_at->format('j F Y') }}
             </div>
             <p class="text-justify my-3.5 font-light">
                 {{ Str::limit($post['body'], 150) }}
