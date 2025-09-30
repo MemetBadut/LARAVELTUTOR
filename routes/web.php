@@ -44,10 +44,10 @@ Route::get('/posts/{post:slug}', function (Post $post) {
 })->name('posts.detail');
 
 
-Route::get('/authors/{user}', function(User $user){
+Route::get('/authors/{user:username}', function(User $user){
     return view('posts', [
         'title' => 'User Page',
-        'dashboard' => 'Article by ' . $user->name,
+        'dashboard' => $user->posts->count() . ' Article by ' . $user->name,
         'posts' => $user->posts,
     ]);
 });
